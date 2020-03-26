@@ -1,0 +1,4 @@
+NavfnROS:
+
+# Robot Configuration Parameters
+  default_tolerance: 0.10
