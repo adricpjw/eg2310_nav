@@ -2,3 +2,6 @@ NavfnROS:
 
 # Robot Configuration Parameters
   default_tolerance: 0.10
+  
+  neutral_cost: 66
+  cost_factor: 0.55
