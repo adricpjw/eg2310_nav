@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>turtlebot3_navigation</name>
+  <name>eg2310_nav</name>
   <version>1.2.1</version>
   <description>
     The turtlebot3_navigation provides roslaunch scripts for starting the navigation.
