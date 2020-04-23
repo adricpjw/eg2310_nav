@@ -18,7 +18,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
-
+- [Documentation](#Documentation)
 ---
 
 ## Installation
@@ -61,18 +61,33 @@ pi@raspberrypi: ~ $ roslaunch eg2310 turtlebot3_nav_sim.launch
 
 ## Documentation 
 
-> turtlebot3_nav_sim.launch
+### turtlebot3_nav_sim.launch
 - main launch file
-- removed amcl and map file, map src is from gmapping
+- removed amcl and map file, map source is from gmapping
 - launches turtlebot3_slam gmapping launch file
+- change model to appropriate type: `default = "burger"`
+- launches move_base.launch
 
-> move_base.launch
-- Added navfn as global planner
+### move_base.launch
+- Added [navfn](http://wiki.ros.org/navfn) as global planner
+- Current local planner is [dwa local planner](http://wiki.ros.org/dwa_local_planner)
 
-> dwa_local_planner_params_burger
-- Reduced Max linear speed to 0.13 for better performance
+### dwa_local_planner_params_burger
+- Reduced `max_trans_vel` to **0.13** and `min_trans_vel` to **0.08** for better performance
+
+### costmap_common_params_burger
+- Adjust `footprint` for varying size of turtlebot
+- Can experiment with inflation radius and cost_scaling_factor for lethal cost distance from obstacles
+
+### navfn_global_planner_params
+- `default tolerance`: distance (in meters) away from obstacle that can be considered new goal
 
 ---
+## Tests
+
+- Used [Turtlebot Gazebo](http://wiki.ros.org/turtlebot_gazebo) for testing : http://wiki.ros.org/turtlebot_gazebo
+
+<a href="http://wiki.ros.org/turtlebot_gazebo"><img src="https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_world_bugger.png"> </a>
 
 
 
